@@ -9,6 +9,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "/recipes/:id",
-    element: <DetailsPage/>
-  }
+    element: <DetailsPage />,
+  },
 ]);

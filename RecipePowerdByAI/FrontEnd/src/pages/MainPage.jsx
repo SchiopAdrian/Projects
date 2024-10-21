@@ -53,7 +53,6 @@ const MainPage = () => {
         </button>
       </div>
 
-      {/* Display search results */}
       <div className="w-full flex justify-center">
         {recipes.length > 0 ? (
           <div className="container mx-auto flex flex-col items-center overflow-y-auto max-h-svh lg:max-h-full">
@@ -123,13 +122,6 @@ const MainPage = () => {
                     />
                     <div className="flex-col">
                       <Link to={`recipes/${item.id}`}>{item.name}</Link>
-                      {/* <a
-                        target="_blank"
-                        href="www.google.com"
-                        className="mb-1 text-xl font-bold tracking-tight text-gray-900"
-                      >
-                        {item.name}
-                      </a> */}
                       <p className="text-sm text-gray-500 ml-2">20 min.</p>
                     </div>
                     {!item.isFavorite ? (

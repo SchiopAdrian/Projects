@@ -7,15 +7,15 @@ import { router } from "./router/Router";
 import { RecipeProvider } from "./contexts/recipeContext";
 
 const App = () => {
-  return(
+  return (
     <RecipeProvider>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </RecipeProvider>
-  )
+  );
 };
-const rootElement = document.getElementById("app")
-if (!rootElement) throw new Error("Failed to find the root element")
+const rootElement = document.getElementById("app");
+if (!rootElement) throw new Error("Failed to find the root element");
 
-const root = ReactDOM.createRoot(rootElement)
+const root = ReactDOM.createRoot(rootElement);
 
-root.render(<App />)
+root.render(<App />);

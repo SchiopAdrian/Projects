@@ -11,13 +11,12 @@ const DetailsPage = () => {
     deleteFromFavoriteRecipies,
   } = useRecipeContext();
   const { id } = useParams();
-  const navigate = useNavigate(); // Use useNavigate to programmatically navigate
+  const navigate = useNavigate();
   const recipe = getRecipeById(id);
 
   useEffect(() => {
-    // If no recipe is found, redirect to the MainPage
     if (!recipe) {
-      navigate("/"); // Redirect to the main page
+      navigate("/");
     }
   }, [recipe, navigate]);
 
@@ -53,8 +52,6 @@ const DetailsPage = () => {
           </div>
         </div>
 
-        {/* Sticky Section: Title and Button */}
-
         <div className="font-bold text-3xl mt-4">{recipe.name}</div>
         <div className="text-3xl mt-2">
           {!recipe.isFavorite ? (
@@ -69,7 +66,6 @@ const DetailsPage = () => {
         </div>
       </div>
 
-      {/* Ingredients and Instructions */}
       <div>
         <div className="lg:mt-0 mt-10">
           <h1 className="font-bold text-3xl">Ingredients</h1>

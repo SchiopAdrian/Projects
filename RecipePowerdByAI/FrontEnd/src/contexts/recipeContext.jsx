@@ -22,12 +22,11 @@ export const RecipeProvider = ({ children }) => {
             ...recipe,
             ingredients: JSON.parse(recipe.ingredients), // Parse ingredients string to array
             instructions: JSON.parse(recipe.instructions),
-            isFavorite:true // Parse instructions string to array
+            isFavorite: true, // Parse instructions string to array
           };
         });
-  
+
         setFavoriteRecipes(parsedData);
-        
       })
       .catch((e) => console.error(e))
       .finally(() => {
@@ -38,13 +37,15 @@ export const RecipeProvider = ({ children }) => {
 
   const getRecipeById = (id) => {
     // Check if the recipe exists in favoriteRecipes first
-    const favoriteRecipe = Array.isArray(favoriteRecipes) ? favoriteRecipes.find((recipe) => recipe.id === id) : null;
-    
+    const favoriteRecipe = Array.isArray(favoriteRecipes)
+      ? favoriteRecipes.find((recipe) => recipe.id === id)
+      : null;
+
     if (favoriteRecipe) {
-      console.log(favoriteRecipe)
+      console.log(favoriteRecipe);
       return favoriteRecipe; // Return if found in favoriteRecipes
     }
-    
+
     // If not found in favoriteRecipes, search in recipes
     return recipes.find((recipe) => recipe.id === id);
   };
